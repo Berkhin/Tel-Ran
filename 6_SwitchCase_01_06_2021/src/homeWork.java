@@ -2,7 +2,7 @@
 public class homeWork {
 
 	public static void main(String[] args) {
-//		work(5);
+		work(5);
 		workNew(6);
 	}
 
