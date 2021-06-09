@@ -9,14 +9,16 @@ public class homeWorck {
 	}
 
 	public static void printStars(int n, int x) {
-		while (n >= 1) {
-			System.out.print("*");
-			if (n % x == 0) {
+		int a = n;
+		while (a > 0) {
+			if ((n - a) % x != 0) {
+				System.out.print("*");
+			} else {
 				System.out.println();
+				System.out.print("*");
 			}
-			n--;
+			a--;
 		}
-
 	}
 
 	public static double powPositive(double x, int n) {
@@ -36,4 +38,3 @@ public class homeWorck {
 
 	}
 }
-
