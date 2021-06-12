@@ -11,8 +11,6 @@ public class homeWork {
 		} else {
 			System.out.println("not Lucky");
 		}
-		System.out.println("Sum odd digits = " + odd);
-		System.out.println("Sum even digits = " + even);
 
 	}
 
