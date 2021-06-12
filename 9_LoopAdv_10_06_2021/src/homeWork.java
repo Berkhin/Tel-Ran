@@ -2,10 +2,8 @@
 public class homeWork {
 
 	public static void main(String[] args) {
-		int num = 23423;
-		int odd = oddDigits(num);
-		int even = evenDigits(num);
-		boolean lucky = luckyNumber(odd, even);
+		int num = 222222;
+		boolean lucky = luckyNumber(num);
 		if (lucky) {
 			System.out.println("Lucky");
 		} else {
@@ -14,27 +12,16 @@ public class homeWork {
 
 	}
 
-	public static int oddDigits(int num) {
-		int res = 0;
+	public static boolean luckyNumber(int num) {
+		int odd = 0;
+		int even = 0;
 		while (num > 0) {
-			res += num % 10;
-			num /= 100;
-		}
-		return res;
-	}
-
-	public static int evenDigits(int num) {
-		int res = 0;
-		while (num > 0) {
+			odd += num % 10;
 			num /= 10;
-			res += num % 10;
+			even += num % 10;
 			num /= 10;
-
 		}
-		return res;
-	}
-
-	public static boolean luckyNumber(int odd, int even) {
 		return odd == even;
 	}
+
 }
