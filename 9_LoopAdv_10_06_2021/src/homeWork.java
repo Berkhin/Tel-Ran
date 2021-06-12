@@ -13,13 +13,10 @@ public class homeWork {
 	}
 
 	public static boolean luckyNumber(int num) {
-		int odd = 0;
-		int even = 0;
-		while (num > 0) {
-			odd += num % 10;
-			num /= 10;
-			even += num % 10;
-			num /= 10;
+		int odd;
+		int even;
+		for (odd = 0, even = 0; (num > 0); odd += num % 10, num /= 10, even += num % 10, num /= 10) {
+
 		}
 		return odd == even;
 	}
