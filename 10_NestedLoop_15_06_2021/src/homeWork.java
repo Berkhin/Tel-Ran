@@ -13,14 +13,13 @@
 //5. нум делится на 10 тем самым удаляя крайнее число справа.
 //6. так как функция буленговая ретерном она вернет в мэин тру о фолс с завмисимоти от условия будет ли сум равно 0 или нет.
 //7. в итоге функция выводит нам ровняется ли разница всех цифр в числе равной нулю или нет.
-
 public class homeWork {
 
 	public static void main(String[] args) {
 		figure(15);
 		figure2(15);
 		figure3(15);
-		figure4(8);
+		figure4(15);
 
 	}
 
@@ -49,6 +48,7 @@ public class homeWork {
 			System.out.println("");
 		}
 		System.out.println("");
+		System.out.println( "");
 	}
 
 	public static void figure3(int n) {
@@ -69,13 +69,15 @@ public class homeWork {
 	public static void figure4(int n) {
 		for (int i = 1; i <= n; i++) {
 			for (int j = 1; j <= n; j++) {
-				if (i == 1 || i == n || j == 1|| j == n|| j==i|| i == n - j + 1 || n/2>=i) {
+				if (i == 1 || i == n || j == 1|| j == n|| j==i|| i == n-j + 1||i<j && n-i+1>j) {
 					System.out.print("*");
 				} else {
 					System.out.print(" ");
+					
 				}
 			}
-			System.out.println(" " +i);
+			System.out.println(" ");
+			
 		}
 	}
 
