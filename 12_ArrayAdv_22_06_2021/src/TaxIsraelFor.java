@@ -16,7 +16,7 @@ public class TaxIsraelFor {
 	public static double taxIsrael(double salary, double netAllowance, double[] allIndex, double[] allBorder) {
 		double tax = -(netAllowance * 219);
 		for (int i = 0; i <= allBorder.length; i++) {
-			if (salary > allBorder.length && i == allBorder.length - 1) {
+			if (i == allBorder.length - 1) {
 				double res = tax + (salary - allBorder[allBorder.length-1]) * allIndex[allIndex.length-1];// - index;
 				return res > 0 ? res : 0;
 			} else if (salary >= allBorder[i] && salary < allBorder[i + 1]) {
