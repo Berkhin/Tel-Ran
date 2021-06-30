@@ -1,24 +1,16 @@
 
-public class ArrayAdvAppl {
+public class HomeTask {
 
 	public static void main(String[] args) {
 		int[] arr = new int[10];
-		printArray(arr);
 		fillArray(arr, 10, 99);
 		printArray(arr);
-		int sum = sumArray(arr);
-		System.out.println(sum);
-		double avg = average(arr);
-		System.out.println(avg);
-		int max = maxArray(arr);
-		System.out.println(max);
-		int src = search(arr, 55);
+		int src = search(arr, 50);
+		System.out.println();
 		System.out.println(src);
-		int min = minArray(arr);
-		System.out.println("min = " + min);
-		int ind = index0Min(arr);
-		System.out.println("index min = " + ind);
-		System.out.println("с поправкой на ветер index min = " + (ind+1));
+		selectionSort(arr);
+		printArray(arr);
+
 	}
 
 	public static void printArray(int[] arr) {
@@ -31,63 +23,55 @@ public class ArrayAdvAppl {
 
 	private static void fillArray(int[] arr, int min, int max) {
 		for (int i = 0; i < arr.length; i++) {
-			arr[i] = (int) (min + Math.random() * (max - min + 1));// Math.random генерирует случайное число от 0 до 1.
-																	// ( 0...0,1...0,2....0,5....0,9)
+			arr[i] = (int) (min + Math.random() * (max - min + 1));
 		}
 	}
 
-	public static double average(int[] sum) {
-		return 1. * sumArray(sum) / sum.length;
+//	public static void bubbleSort(int[] arr) {
+//		for (int j = 0; j < arr.length - 1; j++) {
+//			for (int i = 0; i < arr.length - 1 - j; i++) {
+//				if (arr[i] > arr[i + 1]) {
+//					arr[i] = arr[i] + arr[i + 1];
+//					arr[i + 1] = arr[i] - arr[i + 1];
+//					arr[i] = arr[i] - arr[i + 1];
+//				}
+//			}
+//		}
+//		System.out.println();
+//	}
 
-	}
+	public static void selectionSort(int[] arr) {
+		for (int j = 0; j < arr.length; j++) {
+			int min = arr[j];
+			for (int i = j; i < arr.length; i++) {
+				if (arr[i] < min) {
+					min = arr[i];
+					arr[i] = arr[j];
+					arr[j] = min;
 
-	public static int sumArray(int[] arr) {
-		int sum = 0;
-		for (int i = 0; i < arr.length; i++) {
-			sum += arr[i];
-		}
-		return sum;
-	}
+				}
 
-	public static int maxArray(int[] arr) {
-		int max = arr[0];
-		for (int i = 0; i < arr.length; i++) {
-			if (arr[i] > max) {
-				max = arr[i];
 			}
-		}
-		return max;
 
+		}
+		System.out.println();
 	}
 
 	public static int search(int[] arr, int value) {
-
-		for (int i = 0; i < arr.length; i++) {
-			if (arr[i] == value) {
-				return i;
+		int l = 0;
+		int r = arr.length - 1;
+		while (l <= r) {
+			int mid = (l + r) / 2;
+			if (arr[mid] == value) {
+				return mid;
+			}
+			if (arr[mid] < value) {
+				l = mid + 1;
+			} else {
+				r = mid - 1;
 			}
 		}
-		return -1;
-	}
-
-	public static int minArray(int[] arr) {
-		int min = arr[0];
-		for (int i = 0; i < arr.length; i++) {
-			if (arr[i] < min) {
-				min = arr[i];
-			}
-		}
-		return min;
+		return -l - 1;
 
 	}
-
-	public static int index0Min(int[] arr) {
-		int minIndex = 0;
-		for (int i = 0; i < arr.length; i++)
-			if (arr[i] < arr[minIndex]) {
-				minIndex = i;
-			}
-		return minIndex;
-	}
-
 }
