@@ -7,7 +7,8 @@ public class HomeTask {
 		printArray(arr);
 		bubbleSort(arr);
 		printArray(arr);
-		int src = search(arr, 55);
+		int src = search(arr, 25);
+		System.out.println();
 		System.out.println(src);
 
 	}
@@ -53,6 +54,10 @@ public class HomeTask {
 				r = mid - 1;
 			}
 		}
-		return 0 - r - 1;
+		if (value < arr[0]) {
+			return -1;
+		} else {
+			return -(r + 2);
+		}
 	}
 }
