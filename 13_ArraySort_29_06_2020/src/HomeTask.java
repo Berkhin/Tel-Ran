@@ -54,10 +54,7 @@ public class HomeTask {
 				r = mid - 1;
 			}
 		}
-		if (value < arr[0]) {
-			return -1;
-		} else {
-			return -(r + 2);
-		}
+		return -l-1;
+		
 	}
 }
