@@ -5,12 +5,9 @@ public class Employee {
 	public String name;
 	public double salary;
 	public double netAllowance;
+	public double taxIsrael;
 
-	public double netSalary(double salary, double netAllowance) {
-		return salary - taxIsrael(salary, netAllowance);
-	}
-
-	public double taxIsrael(double salary, double netAllowance) {
+	public double taxIsrael() {
 		double[] allIndex = { 0.1, 0.14, 0.2, 0.31, 0.35, 0.47, 0.5 };
 		double[] allBorder = { 0, 6330, 9080, 14580, 20260, 42160, 54300 };
 		double tax = -(netAllowance * 219);
@@ -31,11 +28,15 @@ public class Employee {
 
 	}
 
+	public double netSalary() {
+		return salary - taxIsrael();
+	}
+
 	public void display() {
 		System.out.println("ID: " + id + ", Name:" + name + ", Salary:" + salary + ", Tax allowance:" + netAllowance);
 	}
 
 	public void showSalary() {
-		System.out.println(netSalary(salary, netAllowance) + " Налог: " + (salary - netSalary(salary, netAllowance)));
+		System.out.println(netSalary() + " Налог: " + taxIsrael());
 	}
 }
