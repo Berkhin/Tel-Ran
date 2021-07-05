@@ -5,7 +5,6 @@ public class Employee {
 	public String name;
 	public double salary;
 	public double netAllowance;
-	public double taxIsrael;
 
 	public double taxIsrael() {
 		double[] allIndex = { 0.1, 0.14, 0.2, 0.31, 0.35, 0.47, 0.5 };
