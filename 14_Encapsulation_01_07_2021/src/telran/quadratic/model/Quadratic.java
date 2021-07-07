@@ -1,27 +1,27 @@
 package telran.quadratic.model;
 
 public class Quadratic {
-	/* поля start */
-	private int a;
-	private int b;
-	private int c;
+	/* РїРѕР»СЏ start */
+	private double a;
+	private double b;
+	private double c;
 
-	/* поля stop */
-	/* конструктор start */
+	/* РїРѕР»СЏ stop */
+	/* РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ start */
 	public Quadratic(int a, int b, int c) {
 		setA(a);
 		this.b = b;
 		this.c = c;
 	}
 
-	/* конструктор stop */
+	/* РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ stop */
 	/* setters-getters start */
-	public int getA() {
+	public double getA() {
 		return a;
 	}
 
 	public void setA(int a) {
-		if (a > 0) {
+		if (a != 0) {
 			this.a = a;
 		}
 	}
@@ -33,14 +33,14 @@ public class Quadratic {
 		double X = Math.sqrt(D);
 		
 		if (D < 0) {
-			System.out.println("Нет корня");
+			System.out.println("РќРµС‚ РєРѕСЂРЅСЏ");
 		}else if (D == 0) {
 			double x1 = (-b + X) / 2*a;	
-			System.out.println("Дискриминант: "+ D + " Корень: " + x1);
+			System.out.println("Р”РёСЃРєСЂРёРјРёРЅР°РЅС‚: "+ D + " РљРѕСЂРµРЅСЊ: " + x1);
 		}else {
 			double x1 = (-b + X) / 2*a;	
 			double x2 = (-b - X) / 2*a;
-			System.out.println("Дискриминант: "+ D + " Корни: " + x1 + " И: "+ x2);
+			System.out.println("Р”РёСЃРєСЂРёРјРёРЅР°РЅС‚: "+ D + " РљРѕСЂРЅРё: " + x1 + " Р: "+ x2);
 		}
 	}
 
